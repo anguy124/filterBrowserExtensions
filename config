@@ -35,7 +35,6 @@
   }
 
   var _rollbarConfig = {
-    globalAlias: "_rollbar",
     accessToken: "access_token",
     autoInstrument: true,
     captureUncaught: true,
@@ -44,19 +43,11 @@
     checkIgnore: filterBrowserExtensions,
     endpoint: "https://api.rollbar.com/api/1/",
     payload: {
-      environment: "production-k8s",
-      context: "item/index",
-        person: {
-          id: 1,
-        },
-      server: {
-        root: 'webpack:///./',
-        host: "-"
-      },
+      environment: "production",
       client: {
         javascript: {
           source_map_enabled: true,
-          code_version: "",
+          code_version: "1.0",
           guess_uncaught_frames: true
         }
       }
